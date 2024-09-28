@@ -17,7 +17,7 @@
             <li class="menu-header">Page</li>
             <li class="@if (request()->is('datatables')) active @endif">
                 <a aria-label="vanrsin" class="nav-link" href="{{ url('datatables') }}"><i class="fas fa-table"></i>
-                    <span>DataTables</span>
+                    <span>Santri</span>
                 </a>
             </li>
         </ul>

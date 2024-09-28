@@ -10,7 +10,7 @@
             <li class="menu-header">Home</li>
             <li class="@if (request()->is('/', 'dashboard')) active @endif">
                 <a aria-label="vanrsin" class="nav-link" href="{{ url('dashboard') }}"><i class="fas fa-home"></i>
-                    <span>Dashboard2</span>
+                    <span>Dashboard3</span>
                 </a>
             </li>
 

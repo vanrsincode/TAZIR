@@ -20,6 +20,11 @@
                     <span>Perizinan</span>
                 </a>
             </li>
+            <li class="@if (request()->is('santri')) active @endif">
+                <a aria-label="vanrsin" class="nav-link" href="{{ url('santri') }}"><i class="fas fa-table"></i>
+                    <span>Santri</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

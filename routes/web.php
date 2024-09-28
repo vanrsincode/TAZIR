@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 });
 
-Route::get('/datatables', function () {
-    return view('admin-panel.page.datables.index');
+Route::get('/perizinan', function () {
+    return view('admin-panel.page.perizinan.index');
 });

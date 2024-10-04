@@ -37,6 +37,10 @@ Route::get('log', function () {
     return view('admin-panel.page.data-sistem.log.index');
 })->name('log.index');
 
+Route::get('perizinan.index', function () {
+    return view('admin-panel.page.perizinan.index');
+})->name('perizinan.index');
+
 Route::get('data-pengguna', function () {
     return view('admin-panel.page.data-pengguna.index');
 })->name('data-pengguna.index');

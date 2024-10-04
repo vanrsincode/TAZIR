@@ -71,7 +71,7 @@
             </li>
 
             <!-- Pelanggaran Santri -->
-            <li class="nav-item dropdown {{ request()->routeIs('#', '#', '#', '#') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->routeIs('#', 'harian.index', 'bulanan.index', '#') ? 'active' : '' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown">
                     <i class="fas fa-user-times" style="color: #dc3545;"></i><span> Pelanggaran</span>
                 </a>
@@ -79,19 +79,19 @@
                     <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                         <a class="nav-link" href="#">Input Pelanggaran</a>
                     </li>
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Laporan Harian</a>
+                    <li class="{{ request()->routeIs('harian.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="harian.index">Laporan Harian</a>
                     </li>
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Laporan Bulanan</a>
+                    <li class="{{ request()->routeIs('bulanan.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="bulanan.index">Laporan Bulanan</a>
                     </li>
                 </ul>
             </li>
 
             <!-- Aktivitas -->
             <li class="menu-header">Aktivitas</li>
-            <li class="{{ request()->routeIs('log') ? 'active' : '' }}">
-                <a aria-label="vanrsin" class="nav-link" href="#">
+<li class="{{ request()->routeIs('log-aktivitas.index') ? 'active' : '' }}">
+                <a aria-label="vanrsin" class="nav-link" href="{{ route('log-aktivitas.index') }}">
                     <i class="fas fa-history"></i> <span>Log Aktivitas</span>
                 </a>
             </li>

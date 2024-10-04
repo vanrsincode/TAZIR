@@ -19,7 +19,8 @@
             <li class="menu-header">Kelola Data</li>
 
             <!-- Data -->
-            <li class="nav-item dropdown {{ request()->routeIs('#', '#', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
+            <li
+                class="nav-item dropdown {{ request()->routeIs('#', 'kelas-madrasah.index', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown"><i
                         class="fas fa-server"></i><span>Data Sistem</span></a>
                 <ul class="dropdown-menu">
@@ -39,14 +40,14 @@
             </li>
 
             <!-- Data Santri -->
-<li class="{{ request()->routeIs('santri') ? 'active' : '' }}">
+            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user"></i> <span>Data Santri</span>
                 </a>
             </li>
 
             <!-- Data Pengguna -->
-<li class="{{ request()->routeIs('pengguna') ? 'active' : '' }}">
+            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user-tie"></i> <span>Data Pengguna</span>
                 </a>

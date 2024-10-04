@@ -19,7 +19,7 @@
             <li class="menu-header">Kelola Data</li>
 
             <!-- Data -->
-            <li class="nav-item dropdown {{ request()->routeIs('#', '#', '#', '#') ? 'active' : '@endif' }}">
+            <li class="nav-item dropdown {{ request()->routeIs('#', '#', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown"><i
                         class="fas fa-server"></i><span>Data Sistem</span></a>
                 <ul class="dropdown-menu">
@@ -32,21 +32,21 @@
                     <li class="{{ request()->routeIs('level-pelanggaran.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('level-pelanggaran.index') }}">Level Pelanggaran</a>
                     </li>
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Klasifikasi Violasi</a>
+                    <li class="{{ request()->routeIs('klasisfikasi-violasi.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('klasisfikasi-violasi.index') }}">Klasifikasi Violasi</a>
                     </li>
                 </ul>
             </li>
 
             <!-- Data Santri -->
-            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
+<li class="{{ request()->routeIs('santri') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user"></i> <span>Data Santri</span>
                 </a>
             </li>
 
             <!-- Data Pengguna -->
-            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
+<li class="{{ request()->routeIs('pengguna') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user-tie"></i> <span>Data Pengguna</span>
                 </a>

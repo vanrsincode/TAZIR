@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
+|kelas-madrasahkelas-madrasah----------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('level-pelanggaran', function () {
     return view('admin-panel.page.data-sistem.level-pelanggaran.index');
 })->name('level-pelanggaran.index');
+
+Route::get('kelas-madrasah', function () {
+    return view('admin-panel.page.data-sistem.kelas-madrasah.index');
+})->name('kelas-madrasah.index');

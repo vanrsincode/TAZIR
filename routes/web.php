@@ -32,16 +32,12 @@ Route::get('kelas-madrasah', function () {
 Route::get('klasifikasi-violasi', function () {
     return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');
 })->name('klasisfikasi-violasi.index');
-<<<<<<< HEAD
+
 Route::get('log-aktivitas.index', function () {
     return view('admin-panel.page.aktivitas.log-aktivitas.index');
 })->name('log-aktivitas.index');
-=======
 
-Route::get('log', function () {
-    return view('admin-panel.page.data-sistem.log.index');
-})->name('log.index');
->>>>>>> c011687dd8439794940396bebfceef4dd6a18088
+
 
 Route::get('perizinan.index', function () {
     return view('admin-panel.page.perizinan.index');
@@ -50,7 +46,7 @@ Route::get('input-izin', function () {
     return view('admin-panel.page.perizinan.input');
 })->name('perizinan.create');
 
-<<<<<<< HEAD
+
 Route::get('harian.index', function () {
     return view('admin-panel.page.pelanggaran.harian.index');
 })->name('harian.index');
@@ -58,7 +54,7 @@ Route::get('harian.index', function () {
 Route::get('bulanan.index', function () {
     return view('admin-panel.page.pelanggaran.bulanan.index');
 })->name('bulanan.index');
-=======
+
 Route::get('data-pengguna', function () {
     return view('admin-panel.page.data-pengguna.index');
 })->name('data-pengguna.index');
@@ -66,4 +62,4 @@ Route::get('data-pengguna', function () {
 Route::get('data-santri', function () {
     return view('admin-panel.page.data-santri.index');
 })->name('data-santri.index');
->>>>>>> c011687dd8439794940396bebfceef4dd6a18088
+

@@ -32,6 +32,7 @@ Route::get('kelas-madrasah', function () {
 Route::get('klasifikasi-violasi', function () {
     return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');
 })->name('klasisfikasi-violasi.index');
+
 Route::get('log', function () {
     return view('admin-panel.page.data-sistem.log.index');
 })->name('log.index');
@@ -39,3 +40,11 @@ Route::get('log', function () {
 Route::get('perizinan.index', function () {
     return view('admin-panel.page.perizinan.index');
 })->name('perizinan.index');
+
+Route::get('data-pengguna', function () {
+    return view('admin-panel.page.data-pengguna.index');
+})->name('data-pengguna.index');
+
+Route::get('data-santri', function () {
+    return view('admin-panel.page.data-santri.index');
+})->name('data-santri.index');

@@ -20,7 +20,7 @@
 
             <!-- Data -->
             <li
-                class="nav-item dropdown {{ request()->routeIs('#', 'kelas-madrasah.index', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
+                class="nav-item dropdown {{ request()->routeIs('izin.index', 'kelas-madrasah.index', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown"><i
                         class="fas fa-server"></i><span>Data Sistem</span></a>
                 <ul class="dropdown-menu">

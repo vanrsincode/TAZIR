@@ -28,7 +28,7 @@ Route::get('level-pelanggaran', function () {
 Route::get('kelas-madrasah', function () {
     return view('admin-panel.page.data-sistem.kelas-madrasah.index');
 })->name('kelas-madrasah.index');
-  
+
 Route::get('klasifikasi-violasi', function () {
     return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');
 })->name('klasisfikasi-violasi.index');

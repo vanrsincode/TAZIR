@@ -23,8 +23,8 @@
                 <a aria-label="skost" href="#" class="nav-link has-dropdown"><i
                         class="fas fa-server"></i><span>Data Sistem</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Izin</a>
+                    <li class="{{ request()->routeIs('izin.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('izin.index') }}">Izin</a>
                     </li>
                     <li class="{{ request()->routeIs('kelas-madrasah.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('kelas-madrasah.index') }}">Kelas Madrasah</a>

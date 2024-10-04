@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 })->name('dashboard');
 
+Route::get('izin', function () {
+    return view('admin-panel.page.data-sistem.izin.index');
+})->name('izin.index');
+
 Route::get('level-pelanggaran', function () {
     return view('admin-panel.page.data-sistem.level-pelanggaran.index');
 })->name('level-pelanggaran.index');

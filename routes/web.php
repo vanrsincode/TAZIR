@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('level-pelanggaran', function () {
     return view('admin-panel.page.data-sistem.level-pelanggaran.index');
 })->name('level-pelanggaran.index');
+
+Route::get('klasifikasi-violasi', function () {
+    return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');
+})->name('klasisfikasi-violasi.index');

@@ -13,18 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('admin-dashboard', function () {
+Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 })->name('dashboard');
 
-Route::get('santri', function () {
-    return view('admin-panel.page.santri.index');
-})->name('santri');
-
-Route::get('pengguna', function () {
-    return view('admin-panel.page.pengguna.index');
-})->name('pengguna');
-
-Route::get('/perizinan', function () {
-    return view('admin-panel.page.perizinan.index');
-});
+Route::get('level-pelanggaran', function () {
+    return view('admin-panel.page.data-sistem.level-pelanggaran.index');
+})->name('level-pelanggaran.index');

@@ -29,8 +29,8 @@
                     <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                         <a class="nav-link" href="#">Kelas Madrasah</a>
                     </li>
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Level Pelanggaran</a>
+                    <li class="{{ request()->routeIs('level-pelanggaran.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('level-pelanggaran.index') }}">Level Pelanggaran</a>
                     </li>
                     <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                         <a class="nav-link" href="#">Klasifikasi Violasi</a>

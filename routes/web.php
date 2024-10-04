@@ -35,3 +35,7 @@ Route::get('klasifikasi-violasi', function () {
 Route::get('log', function () {
     return view('admin-panel.page.data-sistem.log.index');
 })->name('log.index');
+
+Route::get('perizinan.index', function () {
+    return view('admin-panel.page.perizinan.index');
+})->name('perizinan.index');

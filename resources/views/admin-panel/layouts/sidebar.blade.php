@@ -40,15 +40,15 @@
             </li>
 
             <!-- Data Santri -->
-            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                <a aria-label="vanrsin" class="nav-link" href="#">
+            <li class="{{ request()->routeIs('data-santri.index') ? 'active' : '' }}">
+                <a aria-label="vanrsin" class="nav-link" href="{{ route('data-santri.index') }}">
                     <i class="fas fa-user"></i> <span>Data Santri</span>
                 </a>
             </li>
 
             <!-- Data Pengguna -->
-            <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                <a aria-label="vanrsin" class="nav-link" href="#">
+            <li class="{{ request()->routeIs('data-pengguna.index') ? 'active' : '' }}">
+                <a aria-label="vanrsin" class="nav-link" href="{{ route('data-pengguna.index') }}">
                     <i class="fas fa-user-tie"></i> <span>Data Pengguna</span>
                 </a>
             </li>

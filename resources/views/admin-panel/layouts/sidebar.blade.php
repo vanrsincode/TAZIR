@@ -56,13 +56,13 @@
             <li class="menu-header">Sistem</li>
 
             <!-- Perizinan Santri -->
-            <li class="nav-item dropdown {{ request()->routeIs('#', 'perizinan.index') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->routeIs('perizinan.create', 'perizinan.index') ? 'active' : '' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown">
                     <i class="fas fa-file-signature" style="color: #0b9640;"></i><span> Perizinan </span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Input Izin</a>
+                    <li class="{{ request()->routeIs('perizinan.create') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('perizinan.create') }}">Input Izin</a>
                     </li>
                     <li class="{{ request()->routeIs('perizinan.index') ? 'active' : '' }}">
                         <a class="nav-link" href="perizinan.index">Laporan Izin</a>
@@ -91,7 +91,7 @@
             <!-- Aktivitas -->
             <li class="menu-header">Aktivitas</li>
             <li class="{{ request()->routeIs('log') ? 'active' : '' }}">
-                <a aria-label="vanrsin" class="nav-link" href="{{ route('log.index') }}">
+                <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-history"></i> <span>Log Aktivitas</span>
                 </a>
             </li>

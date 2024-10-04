@@ -40,6 +40,9 @@ Route::get('log', function () {
 Route::get('perizinan.index', function () {
     return view('admin-panel.page.perizinan.index');
 })->name('perizinan.index');
+Route::get('input-izin', function () {
+    return view('admin-panel.page.perizinan.input');
+})->name('perizinan.create');
 
 Route::get('data-pengguna', function () {
     return view('admin-panel.page.data-pengguna.index');

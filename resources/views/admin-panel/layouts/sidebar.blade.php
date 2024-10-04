@@ -26,8 +26,8 @@
                     <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
                         <a class="nav-link" href="#">Izin</a>
                     </li>
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Kelas Madrasah</a>
+                    <li class="{{ request()->routeIs('kelas-madrasah.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('kelas-madrasah.index') }}">Kelas Madrasah</a>
                     </li>
                     <li class="{{ request()->routeIs('level-pelanggaran.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('level-pelanggaran.index') }}">Level Pelanggaran</a>
@@ -39,14 +39,14 @@
             </li>
 
             <!-- Data Santri -->
-            <li class="{{ request()->routeIs('santri') ? 'active' : '' }}">
+<li class="{{ request()->routeIs('santri') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user"></i> <span>Data Santri</span>
                 </a>
             </li>
 
             <!-- Data Pengguna -->
-            <li class="{{ request()->routeIs('pengguna') ? 'active' : '' }}">
+<li class="{{ request()->routeIs('pengguna') ? 'active' : '' }}">
                 <a aria-label="vanrsin" class="nav-link" href="#">
                     <i class="fas fa-user-tie"></i> <span>Data Pengguna</span>
                 </a>

@@ -21,13 +21,12 @@
                <div class="card irounded-1 shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                          <p class="card-title font-weight-bold text-dark" style="white-space: nowrap;">Tabel Pelanggaran Bulanan Santri</p>
-                         <button type="button" class="Btn" id="createPelanggaranBulanan">
+                         <a href="{{ route('pelanggaran.create') }}" class="Btn" id="createPelanggaranBulanan">
                               <div class="btn-ico-plus">
                                    <span class="fas fa-plus"></span>
                               </div>
-
                               <div class="btn-text">Tambah Data</div>
-                         </button>
+                         </a>
                     </div>
                     <div class="card-body">
                          <div class="table-responsive">

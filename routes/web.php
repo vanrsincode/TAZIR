@@ -44,10 +44,12 @@ Route::get('input-izin', function () {
     return view('admin-panel.page.perizinan.input');
 })->name('perizinan.create');
 
+Route::get('input-pelanggaran', function () {
+    return view('admin-panel.page.pelanggaran.input');
+})->name('pelanggaran.create');
 Route::get('harian.index', function () {
     return view('admin-panel.page.pelanggaran.harian.index');
 })->name('harian.index');
-
 Route::get('bulanan.index', function () {
     return view('admin-panel.page.pelanggaran.bulanan.index');
 })->name('bulanan.index');

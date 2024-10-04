@@ -71,13 +71,13 @@
             </li>
 
             <!-- Pelanggaran Santri -->
-            <li class="nav-item dropdown {{ request()->routeIs('#', 'harian.index', 'bulanan.index', '#') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->routeIs('pelanggaran.create', 'harian.index', 'bulanan.index', '#') ? 'active' : '' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown">
                     <i class="fas fa-user-times" style="color: #dc3545;"></i><span> Pelanggaran</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li class="{{ request()->routeIs('#') ? 'active' : '' }}">
-                        <a class="nav-link" href="#">Input Pelanggaran</a>
+                    <li class="{{ request()->routeIs('pelanggaran.create') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('pelanggaran.create') }}">Input Pelanggaran</a>
                     </li>
                     <li class="{{ request()->routeIs('harian.index') ? 'active' : '' }}">
                         <a class="nav-link" href="harian.index">Laporan Harian</a>

@@ -88,6 +88,15 @@
                 </ul>
             </li>
 
+            <!-- Aktivitas -->
+            <li class="menu-header">Aktivitas</li>
+            <li class="{{ request()->routeIs('log') ? 'active' : '' }}">
+                <a aria-label="vanrsin" class="nav-link" href="{{ route('log.index') }}">
+                    <i class="fas fa-history"></i> <span>Log Aktivitas</span>
+                </a>
+            </li>
+
+
         </ul>
     </aside>
 </div>

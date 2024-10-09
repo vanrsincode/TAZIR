@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('preloader/preloader.css') }}" loading="lazy">
     <link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/style-custom.css" loading="lazy">
     <link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/style.css" loading="lazy">
-    <link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/components-custom.css" loading="lazy">
+    {{-- <link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/components-custom.css" loading="lazy"> --}}
 
     @stack('css')
 </head>
@@ -81,7 +81,7 @@
 
     <!-- Template JS File -->
     {{-- <script src="{{ asset('preloader/preloader.js') }}"></script> --}}
-    <script src="{{ asset('adm-panel') }}/assets/js/scripts2.js"></script>
+    <script src="{{ asset('adm-panel') }}/assets/js/scripts.js"></script>
 
     <!-- Page Specific JS File -->
     @stack('js')

@@ -22,7 +22,7 @@
                               </div>
                               <div class="form-group col-md-12">
                                    <label for="kelas">Kelas</label>
-                                   <select class="form-control" id="kelas" name="kelas" value="{{ old('kelas') }}">
+                                   <select class="form-control select2" id="kelas" name="kelas" value="{{ old('kelas') }}">
                                         <option value="" selected>-- Pilih Kelas --</option>
                                    </select>
                                    <div class="invalid-feedback msg-kelas"></div>

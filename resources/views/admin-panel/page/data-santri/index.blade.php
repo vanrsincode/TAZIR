@@ -2,8 +2,13 @@
 
 @section('title', 'Data Santri')
 
+@push('css')
+<link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/components/18-select2.css">
+@endpush
+
 @push('css_vendor')
 @include('admin-panel.layouts.vendor.cssVendor')
+<link rel="stylesheet" href="{{ asset('adm-panel/vendor') }}/select2/dist/css/select2.min.css">
 @endpush
 
 @section('content')
@@ -72,12 +77,14 @@
 
 @push('js_vendor')
 @include('admin-panel.layouts.vendor.jsVendor')
+<script src="{{ asset('adm-panel/vendor') }}/select2/dist/js/select2.full.min.js"></script>
 @endpush
 
 @push('js')
 <script>
      $(document).ready(function() {
           $('#data-santri-tbl').dataTable()
+          $('#kelas').select2()
 
           $('body').on('click touchstart', '#createDataSantri', function() {
                $('#modalDataSantri').modal('show')

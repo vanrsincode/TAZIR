@@ -4,7 +4,7 @@
             <a href="#">PP SHOLAWAT</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="#"></a>
+            <a href="#"><img alt="image" src="{{ asset('adm-panel') }}/assets/img/logo/logoSholawat.png" class="rounded-circle shadow" style="width: 45px" loading="lazy"></a>
         </div>
         <ul class="sidebar-menu">
 

@@ -54,7 +54,10 @@
                                              <td>#</td>
                                              <td>#</td>
                                              <td>#</td>
-                                             <td>#</td>
+                                             <td>
+                                                  <a href="{{ route('data-santri.detail.index') }}" class="btn btn-primary btn-sm">Detail</a>
+                                                  {{-- <a href="#" class="btn btn-primary btn-sm">Detail</a> --}}
+                                              </td>
                                         </tr>
                                    </tbody>
                               </table>

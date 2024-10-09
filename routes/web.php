@@ -36,11 +36,7 @@ Route::get('klasifikasi-violasi', function () {
 Route::get('log-aktivitas.index', function () {
     return view('admin-panel.page.aktivitas.log-aktivitas.index');
 })->name('log-aktivitas.index');
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 68fd9c84099042b56a8ead93471bd0f7350ba766
 
 Route::get('perizinan.index', function () {
     return view('admin-panel.page.perizinan.index');
@@ -49,13 +45,11 @@ Route::get('input-izin', function () {
     return view('admin-panel.page.perizinan.input');
 })->name('perizinan.create');
 
-<<<<<<< HEAD
 
-=======
 Route::get('input-pelanggaran', function () {
     return view('admin-panel.page.pelanggaran.input');
 })->name('pelanggaran.create');
->>>>>>> 68fd9c84099042b56a8ead93471bd0f7350ba766
+
 Route::get('harian.index', function () {
     return view('admin-panel.page.pelanggaran.harian.index');
 })->name('harian.index');
@@ -70,4 +64,8 @@ Route::get('data-pengguna', function () {
 Route::get('data-santri', function () {
     return view('admin-panel.page.data-santri.index');
 })->name('data-santri.index');
+
+Route::get('detail-santri', function () {
+    return view('admin-panel.page.data-santri.detail.index');
+})->name('data-santri.detail.index');
 

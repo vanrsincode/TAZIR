@@ -28,6 +28,13 @@
                                    <div class="invalid-feedback msg-kelas"></div>
                               </div>
                               <div class="form-group col-md-12">
+                                   <label for="j_klamin">Jenis Klamin</label>
+                                   <select class="form-control select2" id="j_klamin" name="j_klamin" value="{{ old('j_klamin') }}">
+                                        <option value="" selected>-- Pilih Jenis Klamin --</option>
+                                   </select>
+                                   <div class="invalid-feedback msg-kelas"></div>
+                              </div>
+                              <div class="form-group col-md-12">
                                    <label for="alamat">Alamat</label>
                                    <textarea class="form-control" name="alamat" id="alamat" style="height: 100px;" value="" placeholder="Masukan Alamat Lengkap"></textarea>
                                    <div class="invalid-feedback msg-alamat"></div>

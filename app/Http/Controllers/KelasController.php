@@ -19,10 +19,9 @@ class KelasController extends Controller
             $request->all(),
             [
                 'nama_kelas'     => 'required'
-               
             ],
             [
-                'nama_kelas.required'    => 'kelas harus diisi!',
+                'nama_kelas.required'    => 'Kelas harus diisi!',
             ]
         );
 
@@ -31,7 +30,7 @@ class KelasController extends Controller
         }
 
         Kelas::create([
-            'nama_kelas' => $request->kelas,
+            'nama_kelas' => $request->nama_kelas,
         ]);
 
         return response()->json(['succes'=>true], 200);
@@ -51,7 +50,6 @@ class KelasController extends Controller
             $request->all(),
             [
                 'nama_kelas'     => 'required'
-               
             ],
             [
                 'nama_kelas'    => 'Kelas harus diisi!'
@@ -65,7 +63,7 @@ class KelasController extends Controller
         $kelas = Kelas::findOrFail($id);
 
         $kelas->update([
-            'Kelas'   => $request->kelas,
+            'nama_kelas'   => $request->nama_kelas,
         ]);
 
         return response()->json(['success' => true], 200);

@@ -39,13 +39,6 @@
                                              <th width="90px">Aksi</th>
                                         </tr>
                                    </thead>
-                                   <tbody>
-                                        <tr style="text-align-last: center;">
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                        </tr>
-                                   </tbody>
                               </table>
                          </div>
                     </div>
@@ -64,14 +57,6 @@
 @endpush
 
 @push('js')
-<script>
-     $(document).ready(function() {
-          $('#kelas-madrasah-tbl').dataTable()
-
-          $('body').on('click touchstart', '#createKelasMadrasah', function() {
-               $('#modalKelasMadrasah').modal('show')
-          });
-     });
-
-</script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/data-sistem/kelas/main.js') }}"></script>
 @endpush

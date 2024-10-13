@@ -35,17 +35,11 @@
                                    <thead class="bg-secondary text-dark">
                                         <tr style="text-align-last: center;">
                                              <th width="5px">#</th>
-                                             <th>Nama Kelas</th>
+                                             <th>Izin</th>
+                                             <th>Jangka Waktu</th>
                                              <th width="90px">Aksi</th>
                                         </tr>
                                    </thead>
-                                   <tbody>
-                                        <tr style="text-align-last: center;">
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                        </tr>
-                                   </tbody>
                               </table>
                          </div>
                     </div>
@@ -64,14 +58,6 @@
 @endpush
 
 @push('js')
-<script>
-     $(document).ready(function() {
-          $('#izin-tbl').dataTable()
-
-          $('body').on('click touchstart', '#createIzin', function() {
-               $('#modalIzin').modal('show')
-          });
-     });
-
-</script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/data-sistem/izin/main.js') }}"></script>
 @endpush

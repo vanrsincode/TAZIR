@@ -1,4 +1,4 @@
-<div class="modal fade modal-roll" id="modalKelasMadrasah" tabindex="-1" role="dialog" aria-labelledby="MHKelasMadrasah" aria-hidden="true">
+<div class="modal fade modal-roll" id="modalKelasMadrasah" role="dialog" aria-labelledby="MHKelasMadrasah" aria-hidden="true">
      <div class="modal-dialog modal-lg">
           <div class="modal-content">
                <div class="modal-header">
@@ -11,9 +11,9 @@
                     <div class="modal-body pb-2">
                          <div class="row">
                               <div class="form-group col-md-12">
-                                   <label for="level">Nama Kelas</label>
-                                   <input type="text" class="form-control" name="nama-kelas" id="nama-kelas" value="{{ old('nama-kelas') }}">
-                                   <div class="invalid-feedback msg-level"></div>
+                                   <label for="nama_kelas">Nama Kelas</label>
+                                   <input type="text" class="form-control" name="nama_kelas" id="nama_kelas" value="{{ old('nama_kelas') }}">
+                                   <div class="invalid-feedback msg-nama_kelas"></div>
                               </div>
                          </div>
                     </div>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Component\DataTableController;
+use App\Http\Controllers\IzinController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LevelController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,15 +19,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(DataTableController::class)->group(function() {
     Route::get('dataLevel', 'dataTableLevel');
+    Route::get('dataKelas', 'dataTableKelas');
+    Route::get('dataIzin', 'dataTableIzin');
 });
 
 Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 })->name('dashboard');
 
-Route::get('izin', function () {
-    return view('admin-panel.page.data-sistem.izin.index');
-})->name('izin.index');
+Route::controller(IzinController::class)->group(function() {
+    Route::get('izin', 'index')->name('izin.index');
+    Route::get('izin/{id}', 'show')->name('izin.show');
+    Route::post('izin', 'store')->name('izin.store');
+    Route::post('izin/{id}', 'update')->name('izin.update');
+    Route::post('izin/del/{id}', 'destroy')->name('izin.destroy');
+});
 
 Route::controller(LevelController::class)->group(function() {
     Route::get('level-pelanggaran', 'index')->name('level-pelanggaran.index');
@@ -35,9 +43,13 @@ Route::controller(LevelController::class)->group(function() {
     Route::post('level-pelanggaran/del/{id}', 'destroy')->name('level-pelanggaran.destroy');
 });
 
-Route::get('kelas-madrasah', function () {
-    return view('admin-panel.page.data-sistem.kelas-madrasah.index');
-})->name('kelas-madrasah.index');
+Route::controller(KelasController::class)->group(function() {
+    Route::get('kelas-madrasah', 'index')->name('kelas-madrasah.index');
+    Route::get('kelas-madrasah/{id}', 'show')->name('kelas-madrasah.show');
+    Route::post('kelas-madrasah', 'store')->name('kelas-madrasah.store');
+    Route::post('kelas-madrasah/{id}', 'update')->name('kelas-madrasah.update');
+    Route::post('kelas-madrasah/del/{id}', 'destroy')->name('kelas-madrasah.destroy');
+});
 
 Route::get('klasifikasi-violasi', function () {
     return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');

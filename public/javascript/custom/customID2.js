@@ -1,4 +1,4 @@
-const urlTableID = 'admin/assets/js/language/datatables/idCustom-datatables.json';
+const urlTableID = 'javascript/language/datatables/idCustom-datatables.json';
 const urlSelID = {
     errorLoading: () => "Gagal mengambil hasil",
     inputTooLong: args => `Silakan hapus ${args.input.length - args.maximum} karakter`,

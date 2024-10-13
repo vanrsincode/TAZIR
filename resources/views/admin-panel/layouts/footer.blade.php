@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="footer-right">
-        Copyright &copy; 2023
+        Copyright &copy; 2024
     </div>
     <div class="footer-left">
-        Van Personal Portfolio
+        PP Tazir
     </div>
 </footer>

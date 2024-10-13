@@ -1,3 +1,3 @@
-<script src="{{ asset('adm-panel/assets/js/page/customID2.js') }}"></script>
-<script defer src="{{ asset('adm-panel/assets/js/page/customAll.js') }}"></script>
-<script defer src="{{ asset('adm-panel/assets/js/page/customErrors.js') }}"></script>
+<script src="{{ asset('javascript/custom/customID2.js') }}"></script>
+<script defer src="{{ asset('javascript/custom/customAll.js') }}"></script>
+<script defer src="{{ asset('javascript/custom/customErrors.js') }}"></script>

@@ -1,4 +1,4 @@
-<div class="modal fade modal-roll" id="modalLevelPelanggaran" tabindex="-1" role="dialog" aria-labelledby="MHLevelPelanggaran" aria-hidden="true">
+<div class="modal fade modal-roll" id="modalLevelPelanggaran" role="dialog" aria-labelledby="MHLevelPelanggaran" aria-hidden="true">
      <div class="modal-dialog modal-lg">
           <div class="modal-content">
                <div class="modal-header">

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Component\DataTableController;
+use App\Http\Controllers\LevelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::controller(DataTableController::class)->group(function() {
+    Route::get('dataLevel', 'dataTableLevel');
+});
+
 Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 })->name('dashboard');
@@ -21,9 +27,13 @@ Route::get('izin', function () {
     return view('admin-panel.page.data-sistem.izin.index');
 })->name('izin.index');
 
-Route::get('level-pelanggaran', function () {
-    return view('admin-panel.page.data-sistem.level-pelanggaran.index');
-})->name('level-pelanggaran.index');
+Route::controller(LevelController::class)->group(function() {
+    Route::get('level-pelanggaran', 'index')->name('level-pelanggaran.index');
+    Route::get('level-pelanggaran/{id}', 'show')->name('level-pelanggaran.show');
+    Route::post('level-pelanggaran', 'store')->name('level-pelanggaran.store');
+    Route::post('level-pelanggaran/{id}', 'update')->name('level-pelanggaran.update');
+    Route::post('level-pelanggaran/del/{id}', 'destroy')->name('level-pelanggaran.destroy');
+});
 
 Route::get('kelas-madrasah', function () {
     return view('admin-panel.page.data-sistem.kelas-madrasah.index');

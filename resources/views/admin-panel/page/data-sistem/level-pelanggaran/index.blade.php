@@ -21,7 +21,7 @@
                <div class="card irounded-1 shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                          <p class="card-title font-weight-bold text-dark" style="white-space: nowrap;">Tabel Level Pelanggaran</p>
-                         <button type="button" class="Btn" id="createLevelPelanggaran">
+                         <button type="button" class="Btn" id="createLevel">
                               <div class="btn-ico-plus">
                                    <span class="fas fa-plus"></span>
                               </div>
@@ -41,15 +41,6 @@
                                              <th width="90px">Aksi</th>
                                         </tr>
                                    </thead>
-                                   <tbody>
-                                        <tr style="text-align-last: center;">
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                        </tr>
-                                   </tbody>
                               </table>
                          </div>
                     </div>
@@ -68,14 +59,6 @@
 @endpush
 
 @push('js')
-<script>
-     $(document).ready(function() {
-          $('#level-pelanggaran-tbl').dataTable()
-
-          $('body').on('click touchstart', '#createLevelPelanggaran', function() {
-               $('#modalLevelPelanggaran').modal('show')
-          });
-     });
-
-</script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/data-sistem/level/main.js') }}"></script>
 @endpush

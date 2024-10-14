@@ -26,7 +26,7 @@ $(document).ready(function () {
                btnAll.remove();
           }
           const btnID = mode.toLowerCase() + form;
-          const btnFm = $(`<button type="submit" class="btn btn-primary btn-form" id="${btnID}" data-number="${id}">${mode.charAt(0).toUpperCase() + mode.slice(1)}</button>`);
+          const btnFm = $(`<button type="submit" class="btn btn-theme text-light btn-form" id="${btnID}" data-number="${id}">${mode.charAt(0).toUpperCase() + mode.slice(1)}</button>`);
           btnAll = btnFm;
           btnFm.appendTo('.footer' + form);
 

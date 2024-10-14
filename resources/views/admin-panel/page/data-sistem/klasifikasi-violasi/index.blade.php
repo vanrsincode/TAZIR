@@ -2,8 +2,12 @@
 
 @section('title', 'Klasifikasi Violasi')
 
+@push('css')
+<link rel="stylesheet" href="{{ asset('adm-panel') }}/assets/css/components/18-select2.css">
+@endpush
 @push('css_vendor')
 @include('admin-panel.layouts.vendor.cssVendor')
+<link rel="stylesheet" href="{{ asset('adm-panel/vendor') }}/select2/dist/css/select2.min.css">
 @endpush
 
 @section('content')
@@ -43,18 +47,6 @@
                                              <th width="90px">Aksi</th>
                                         </tr>
                                    </thead>
-                                   <tbody>
-                                        <tr style="text-align-last: center;">
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                             <td>#</td>
-                                        </tr>
-                                   </tbody>
                               </table>
                          </div>
                     </div>
@@ -70,17 +62,10 @@
 
 @push('js_vendor')
 @include('admin-panel.layouts.vendor.jsVendor')
+<script src="{{ asset('adm-panel/vendor') }}/select2/dist/js/select2.full.min.js"></script>
 @endpush
 
 @push('js')
-<script>
-     $(document).ready(function() {
-          $('#klasifikasi-violasi-tbl').dataTable()
-
-          $('body').on('click touchstart', '#createKlasifikasiViolasi', function() {
-               $('#modalKlasifikasiViolasi').modal('show')
-          });
-     });
-
-</script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/data-sistem/violasi/main.js') }}"></script>
 @endpush

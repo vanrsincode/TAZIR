@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Component\DataTableController;
+use App\Http\Controllers\Component\Select2Controller;
 use App\Http\Controllers\IzinController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\ViolasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::controller(Select2Controller::class)->group(function () {
+    Route::get('selectLevel', 'getSelectLevel');
+});
 Route::controller(DataTableController::class)->group(function() {
     Route::get('dataLevel', 'dataTableLevel');
     Route::get('dataKelas', 'dataTableKelas');
     Route::get('dataIzin', 'dataTableIzin');
+    Route::get('dataViolasi', 'dataTableViolasi');
 });
 
 Route::get('/', function () {
@@ -51,9 +57,13 @@ Route::controller(KelasController::class)->group(function() {
     Route::post('kelas-madrasah/del/{id}', 'destroy')->name('kelas-madrasah.destroy');
 });
 
-Route::get('klasifikasi-violasi', function () {
-    return view('admin-panel.page.data-sistem.klasifikasi-violasi.index');
-})->name('klasisfikasi-violasi.index');
+Route::controller(ViolasiController::class)->group(function() {
+    Route::get('klasifikasi-violasi', 'index')->name('klasifikasi-violasi.index');
+    Route::get('klasifikasi-violasi/{id}', 'show')->name('klasifikasi-violasi.show');
+    Route::post('klasifikasi-violasi', 'store')->name('klasifikasi-violasi.store');
+    Route::post('klasifikasi-violasi/{id}', 'update')->name('klasifikasi-violasi.update');
+    Route::post('klasifikasi-violasi/del/{id}', 'destroy')->name('klasifikasi-violasi.destroy');
+});
 
 Route::get('log-aktivitas.index', function () {
     return view('admin-panel.page.aktivitas.log-aktivitas.index');

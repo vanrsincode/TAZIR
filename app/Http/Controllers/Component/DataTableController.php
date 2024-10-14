@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kelola\Izin;
 use App\Models\Kelola\Kelas;
 use App\Models\Kelola\Level;
+use App\Models\Kelola\Violasi;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -52,6 +53,25 @@ class DataTableController extends Controller
                 ->addColumn('action', function ($row) {
                     $btn = '<button data-id="' . $row->id . '"  class="btn btn-warning btn-sm width-btn text-white editData" title="Edit Data"><i class="far fa-edit"></i></button> ';
                     $btn .= '<button data-id="' . $row->id . '" data-nama="' . $row->nama_izin . '" class="btn btn-danger btn-sm width-btn text-white deleteData" title="Hapus Data"><i class="far fa-trash-alt"></i></button>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        // }
+    }
+
+    public function dataTableViolasi(Request $request)
+    {
+        // if ($request->ajax()) {
+            $violasi = Violasi::orderBy('id', 'desc')->get();
+            return DataTables::of($violasi)
+                ->addIndexColumn()
+                ->addColumn('level', fn($row) => $row->level->level)
+                ->addColumn('denda', fn($row) => $row->level->denda)
+                ->addColumn('hukuman', fn($row) => $row->level->hukuman)
+                ->addColumn('action', function ($row) {
+                    $btn = '<button data-id="' . $row->id . '"  class="btn btn-warning btn-sm width-btn text-white editData" title="Edit Data"><i class="far fa-edit"></i></button> ';
+                    $btn .= '<button data-id="' . $row->id . '" data-nama="' . $row->nama_violasi . '" class="btn btn-danger btn-sm width-btn text-white deleteData" title="Hapus Data"><i class="far fa-trash-alt"></i></button>';
                     return $btn;
                 })
                 ->rawColumns(['action'])

@@ -1,9 +1,9 @@
 {
     "emptyTable": "Tidak ada data yang tersedia pada tabel ini",
-    "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
-    "infoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+    "info": "Showing _START_ - _END_ of _TOTAL_ entri",
+    "infoEmpty": "Showing 0 - 0 of 0 entri",
     "infoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
-    "lengthMenu": "Tampilkan _MENU_ entri",
+    "lengthMenu": "Show _MENU_ entri",
     "loadingRecords": "Sedang memuat...",
     "processing": "Sedang memproses...",
     "search": "Cari:",
@@ -11,8 +11,8 @@
     "paginate": {
         "first": "Pertama",
         "last": "Terakhir",
-        "next": "Next",
-        "previous": "Prev"
+        "next": "<i class='fas fa-chevron-right'></i>",
+        "previous": "<i class='fas fa-chevron-left'></i>"
     },
     "aria": {
         "sortAscending": ": aktifkan untuk mengurutkan kolom ke atas",

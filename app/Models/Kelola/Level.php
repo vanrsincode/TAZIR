@@ -10,4 +10,9 @@ class Level extends Model
     use HasFactory;
     protected $table = 'm_level';
     protected $guarded = [];
+
+    public function violasi()
+    {
+        return $this->hasMany(Violasi::class);
+    }
 }

@@ -96,6 +96,8 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     /* --theme-bg: #006FEB; */
     --theme-bg: rgb(6, 72, 35);
     --active-all: #dfeb00;
+    --theme-btn: rgb(6, 72, 35);
+    --theme-btn-disabled: rgb(12, 90, 46);
     /* --theme-bg: #1c1e92; */
     /* --theme-bg:  #543ab7; */
 }
@@ -1609,7 +1611,7 @@ table tr:hover .table-links {
 }
 
 .page-link:hover {
-    background-color: #006FEB;
+    background-color: var(--theme-bg);
     color: #fff;
     border-color: transparent;
 }
@@ -2069,6 +2071,32 @@ h6 .badge {
 .btn-primary.disabled:hover {
     background-color: #005ec3 !important;
 }
+
+/*  */
+.btn-theme,
+.btn-theme.disabled {
+    box-shadow: 0 2px 6px #acb5f6;
+    background-color: var(--theme-btn);
+    border-color: var(--theme-btn);
+}
+
+.btn-theme:focus,
+.btn-theme.disabled:focus {
+    background-color: var(--theme-btn-disabled) !important;
+}
+
+.btn-theme:focus:active,
+.btn-theme.disabled:focus:active {
+    background-color: var(--theme-btn-disabled) !important;
+}
+
+.btn-theme:active,
+.btn-theme:hover,
+.btn-theme.disabled:active,
+.btn-theme.disabled:hover {
+    background-color: var(--theme-btn-disabled) !important;
+}
+/*  */
 
 .btn-outline-primary,
 .btn-outline-primary.disabled {

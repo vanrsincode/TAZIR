@@ -17,17 +17,24 @@
                               </div>
                               <div class="form-group col-md-12">
                                    <label for="larangan">Larangan</label>
-                                   <select class="form-control" id="larangan" name="larangan" value="{{ old('larangan') }}">
-                                        <option value="" selected>-- Pilih Larangan --</option>
+                                   <select class="custom-select" id="larangan" name="larangan" value="{{ old('larangan') }}">
+                                        @foreach ($larangan as $key => $value)
+                                        <option value="{{ $value }}">{{ $value }}</option>
+                                        @endforeach
                                    </select>
                                    <div class="invalid-feedback msg-larangan"></div>
                               </div>
                               <div class="form-group col-md-12">
                                    <label for="level">Level</label>
                                    <select class="form-control" id="level" name="level" value="{{ old('level') }}">
-                                        <option value="" selected>-- Pilih Level --</option>
+                                        
                                    </select>
                                    <div class="invalid-feedback msg-level"></div>
+                              </div>
+                              <div class="form-group col-md-12">
+                                   <label for="batas_maksimal">Batas Maksimal</label>
+                                   <input type="number" class="form-control" name="batas_maksimal" id="batas_maksimal" value="{{ old('batas_maksimal') }}">
+                                   <div class="invalid-feedback msg-batas_maksimal"></div>
                               </div>
                          </div>
                     </div>

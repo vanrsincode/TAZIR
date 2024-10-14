@@ -18,6 +18,16 @@ class LevelSeeder extends Seeder
                 'level'     => 1,
                 'denda'     => 150000,
                 'hukuman'   => 'Menulis dan menghapal, Berdiri membaca Al-Qur`an, Disita barang buktinya'
+            ],
+            [
+                'level'     => 2,
+                'denda'     => 1000000,
+                'hukuman'   => 'Menulis dan menghapal, Berdiri membaca Al-Qur`an, Disita barang buktinya'
+            ],
+            [
+                'level'     => 3,
+                'denda'     => 5000000,
+                'hukuman'   => 'Dipulangkan (dengan kebijakan Pengasuh)'
             ]
         ];
 

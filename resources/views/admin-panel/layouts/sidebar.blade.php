@@ -20,7 +20,7 @@
 
             <!-- Data -->
             <li
-                class="nav-item dropdown {{ request()->routeIs('izin.index', 'kelas-madrasah.index', 'level-pelanggaran.index', 'klasisfikasi-violasi.index') ? 'active' : '@endif' }}">
+                class="nav-item dropdown {{ request()->routeIs('izin.index', 'kelas-madrasah.index', 'level-pelanggaran.index', 'klasifikasi-violasi.index') ? 'active' : '@endif' }}">
                 <a aria-label="skost" href="#" class="nav-link has-dropdown"><i
                         class="fas fa-server"></i><span>Data Sistem</span></a>
                 <ul class="dropdown-menu">
@@ -33,8 +33,8 @@
                     <li class="{{ request()->routeIs('level-pelanggaran.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('level-pelanggaran.index') }}">Level Pelanggaran</a>
                     </li>
-                    <li class="{{ request()->routeIs('klasisfikasi-violasi.index') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('klasisfikasi-violasi.index') }}">Klasifikasi Violasi</a>
+                    <li class="{{ request()->routeIs('klasifikasi-violasi.index') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('klasifikasi-violasi.index') }}">Klasifikasi Violasi</a>
                     </li>
                 </ul>
             </li>

@@ -163,16 +163,20 @@
     overflow: hidden;
     transition-duration: .3s;
 
-    background-color: #268a37;
+    background-color: var(--theme-btn);
     /* border-color: #006FEB; */
     box-shadow: 0 0 4px #90a1b5;
 
     border: none;
     border-radius: 0.25rem;
-    -webkit-border-radius: 0.25rem;
-    -moz-border-radius: 0.25rem;
-    -ms-border-radius: 0.25rem;
-    -o-border-radius: 0.25rem;
+    outline: none;
+}
+
+.Btn:focus,
+.Btn:active {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 4px #90a1b5;
 }
 
 .Btn.disabled,
@@ -185,7 +189,6 @@ fieldset:disabled a.Btn {
     pointer-events: none;
 }
 
-/* plus sign */
 .btn-ico-plus {
     width: 100%;
     transition-duration: .3s;
@@ -195,11 +198,6 @@ fieldset:disabled a.Btn {
     color: white;
 }
 
-/* .btn-ico-plus span {
-    width: 17px;
-} */
-
-/* text */
 .btn-text {
     position: absolute;
     right: 0%;
@@ -212,11 +210,9 @@ fieldset:disabled a.Btn {
     white-space: nowrap;
 }
 
-/* hover effect on button width */
 .Btn:hover {
     width: 130px;
     transition-duration: .3s;
-    border: none;
 }
 
 .Btn:hover .btn-ico-plus {
@@ -225,7 +221,6 @@ fieldset:disabled a.Btn {
     /* padding-left: 5px; */
 }
 
-/* hover effect button's btn-text */
 .Btn:hover .btn-text {
     opacity: 1;
     width: 75%;
@@ -233,21 +228,14 @@ fieldset:disabled a.Btn {
     padding-right: 10px;
 }
 
-/* button click effect*/
 .Btn:active {
     border: none;
     transform: translate(2px, 2px);
-    -webkit-transform: translate(2px, 2px);
-    -moz-transform: translate(2px, 2px);
-    -ms-transform: translate(2px, 2px);
-    -o-transform: translate(2px, 2px);
 }
 
-/* table button */
 .width-btn {
     width: 29px;
 }
-
 /* End Button */
 
 /* is-invalid */

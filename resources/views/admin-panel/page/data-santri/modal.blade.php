@@ -1,13 +1,13 @@
-<div class="modal fade modal-roll" id="modalDataSantri" tabindex="-1" role="dialog" aria-labelledby="MHDataSantri" aria-hidden="true">
+<div class="modal fade modal-roll" id="modalSantri" role="dialog" aria-labelledby="MHSantri" aria-hidden="true">
      <div class="modal-dialog modal-lg">
           <div class="modal-content">
                <div class="modal-header">
-                    <h5 class="modal-title text-sm" id="MHDataSantri">Title</h5>
+                    <h5 class="modal-title text-sm" id="MHSantri">Title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                          <span aria-hidden="true">&times;</span>
                     </button>
                </div>
-               <form id="FDataSantri" method="POST" enctype="multipart/form-data">
+               <form id="FSantri" method="POST" enctype="multipart/form-data">
                     <div class="modal-body pb-2">
                          <div class="row">
                               <div class="form-group col-md-12">
@@ -28,11 +28,12 @@
                                    <div class="invalid-feedback msg-kelas"></div>
                               </div>
                               <div class="form-group col-md-12">
-                                   <label for="j_klamin">Jenis Klamin</label>
-                                   <select class="form-control select2" id="j_klamin" name="j_klamin" value="{{ old('j_klamin') }}">
-                                        <option value="" selected>-- Pilih Jenis Klamin --</option>
+                                   <label for="jk">Jenis Klamin</label>
+                                   <select class="custom-select" name="jk" id="jk" value="{{ old('jk') }}">
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                    </select>
-                                   <div class="invalid-feedback msg-kelas"></div>
+                                   <div class="invalid-feedback msg-jk"></div>
                               </div>
                               <div class="form-group col-md-12">
                                    <label for="alamat">Alamat</label>
@@ -50,13 +51,13 @@
                                    <div class="invalid-feedback msg-no_wali"></div>
                               </div>
                               <div class="form-group col-md-12">
-                                   <label for="foto_santri">Foto</label>
-                                   <input type="file" class="form-control" name="foto_santri" id="foto_santri" value="{{ old('foto_santri') }}">
-                                   <div class="invalid-feedback msg-foto_santri"></div>
+                                   <label for="ft_santri">Foto</label>
+                                   <input type="file" class="form-control" name="ft_santri" id="ft_santri" value="{{ old('ft_santri') }}">
+                                   <div class="invalid-feedback msg-ft_santri"></div>
                               </div>
                          </div>
                     </div>
-                    <div class="modal-footer justify-content-between footerDataSantri">
+                    <div class="modal-footer justify-content-between footerSantri">
                          <button type="button" class="btn btn-warning" data-dismiss="modal">Keluar</button>
                     </div>
                </form>

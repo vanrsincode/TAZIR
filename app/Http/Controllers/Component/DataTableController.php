@@ -7,6 +7,7 @@ use App\Models\Kelola\Izin;
 use App\Models\Kelola\Kelas;
 use App\Models\Kelola\Level;
 use App\Models\Kelola\Violasi;
+use App\Models\Santri;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -75,6 +76,39 @@ class DataTableController extends Controller
                     return $btn;
                 })
                 ->rawColumns(['action'])
+                ->make(true);
+        // }
+    }
+
+    public function dataTableSantri(Request $request, $id)
+    {
+        // if ($request->ajax()) {
+            $santri = Santri::where('jk_santri', $id)->orderBy('id', 'desc')->get();
+            return DataTables::of($santri)
+                ->addIndexColumn()
+                ->addColumn('nama_kelas', fn($row) => $row->kelas->nama_kelas)
+                ->addColumn('foto', function ($row) {
+                    if ($row->foto_santri) {
+                        $fotoUrl = asset('file/' . $row->foto_santri);
+                        return '<img src="' . $fotoUrl . '" alt="Project Photo" width="100" height="auto" />';
+                    } else {
+                        return 'No image';
+                    }
+                })
+                ->addColumn('action', function ($row) {
+                    $btn = '<div class="dropdown d-inline">
+                        <button class="btn btn-theme btn-sm dropdown-toggle text-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opsi
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="'. route('data-santri.detail.index') .'" class="dropdown-item has-icon detailData"><i class="fas fa-eye"></i> Detail</a>
+                            <a data-id="' . $row->id . '" class="dropdown-item has-icon editData" href="javascript:;"><i class="far fa-edit"></i> Edit Data</a>
+                            <a data-id="' . $row->id . '" data-nama="' . $row->nama_santri . '" class="dropdown-item has-icon deleteData" href="javascript:;"><i class="far fa-trash-alt"></i> Hapus Data</a>
+                        </div>
+                        </div>';
+                    return $btn;
+                })
+                ->rawColumns(['action', 'foto'])
                 ->make(true);
         // }
     }

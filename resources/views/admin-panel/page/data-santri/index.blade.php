@@ -26,7 +26,7 @@
                 <div class="card irounded-1 shadow">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <p class="card-title font-weight-bold text-dark" style="white-space: nowrap;">Tabel Data Santri</p>
-                        <button type="button" class="Btn" id="createDataSantri">
+                        <button type="button" class="Btn" id="createSantri">
                             <div class="btn-ico-plus">
                                 <span class="fas fa-plus"></span>
                             </div>
@@ -46,7 +46,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade tab-pane-putra show active" id="tab-putra" role="tabpanel">
                                 <div class="table-responsive mt-3 tab-putra">
-                                    <table class="table table-striped dt-responsive nowrap" id="putra-tbl"
+                                    <table class="table table-striped dt-responsive nowrap" id="santri-putra-tbl"
                                         style="width: 100%;">
                                         <thead class="bg-secondary text-dark">
                                             <tr style="text-align-last: center;">
@@ -61,29 +61,12 @@
                                                 <th width="90px">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr style="text-align-last: center;">
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>
-                                                    <a href="{{ route('data-santri.detail.index') }}"
-                                                        class="btn btn-primary btn-sm">Detail</a>
-                                                    {{-- <a href="#" class="btn btn-primary btn-sm">Detail</a> --}}
-                                                </td>
-                                            </tr>
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="tab-pane fade tab-pane-putri" id="tab-putri" role="tabpanel">
                                 <div class="table-responsive mt-3 tab-putri">
-                                    <table class="table table-striped dt-responsive nowrap" id="putri-tbl"
+                                    <table class="table table-striped dt-responsive nowrap" id="santri-putri-tbl"
                                         style="width: 100%;">
                                         <thead class="bg-secondary text-dark">
                                             <tr style="text-align: center;">
@@ -98,23 +81,6 @@
                                                 <th width="90px">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr style="text-align-last: center;">
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>#</td>
-                                                <td>
-                                                    <a href="{{ route('data-santri.detail.index') }}"
-                                                        class="btn btn-primary btn-sm">Detail</a>
-                                                    {{-- <a href="#" class="btn btn-primary btn-sm">Detail</a> --}}
-                                                </td>
-                                            </tr>
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -136,15 +102,6 @@
 @endpush
 
 @push('js')
-    <script>
-        $(document).ready(function() {
-            $('#putra-tbl').dataTable()
-            $('#putri-tbl').dataTable()
-            $('#kelas').select2()
-
-            $('body').on('click touchstart', '#createDataSantri', function() {
-                $('#modalDataSantri').modal('show')
-            });
-        });
-    </script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/santri/main.js') }}"></script>
 @endpush

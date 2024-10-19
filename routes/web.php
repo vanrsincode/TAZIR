@@ -5,7 +5,10 @@ use App\Http\Controllers\Component\Select2Controller;
 use App\Http\Controllers\IzinController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ViolasiController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,12 +24,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(Select2Controller::class)->group(function () {
     Route::get('selectLevel', 'getSelectLevel');
+    Route::get('selectKelas', 'getSelectKelas');
 });
 Route::controller(DataTableController::class)->group(function() {
     Route::get('dataLevel', 'dataTableLevel');
     Route::get('dataKelas', 'dataTableKelas');
     Route::get('dataIzin', 'dataTableIzin');
     Route::get('dataViolasi', 'dataTableViolasi');
+    Route::get('dataSantri/{id}', 'dataTableSantri');
 });
 
 Route::get('/', function () {
@@ -65,6 +70,30 @@ Route::controller(ViolasiController::class)->group(function() {
     Route::post('klasifikasi-violasi/del/{id}', 'destroy')->name('klasifikasi-violasi.destroy');
 });
 
+Route::controller(SantriController::class)->group(function() {
+    Route::get('data-santri', 'index')->name('data-santri.index');
+    Route::get('data-santri/{id}', 'show')->name('data-santri.show');
+    Route::post('data-santri', 'store')->name('data-santri.store');
+    Route::post('data-santri/{id}', 'update')->name('data-santri.update');
+    Route::post('data-santri/del/{id}', 'destroy')->name('data-santri.destroy');
+});
+
+Route::get('detail-santri', function () {
+    return view('admin-panel.page.data-santri.detail.index');
+})->name('data-santri.detail.index');
+
+Route::get('/file/{folder}/{filename}', function ($folder, $filename) {
+    $path = storage_path('app/public/' . $folder . '/' . $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+});
+
 Route::get('log-aktivitas.index', function () {
     return view('admin-panel.page.aktivitas.log-aktivitas.index');
 })->name('log-aktivitas.index');
@@ -92,12 +121,3 @@ Route::get('bulanan.index', function () {
 Route::get('data-pengguna', function () {
     return view('admin-panel.page.data-pengguna.index');
 })->name('data-pengguna.index');
-
-Route::get('data-santri', function () {
-    return view('admin-panel.page.data-santri.index');
-})->name('data-santri.index');
-
-Route::get('detail-santri', function () {
-    return view('admin-panel.page.data-santri.detail.index');
-})->name('data-santri.detail.index');
-

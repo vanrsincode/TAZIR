@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             LevelSeeder::class,
-            ViolasiSeeder::class
+            ViolasiSeeder::class,
+            KelasSeeder::class
         ]);
     }
 }

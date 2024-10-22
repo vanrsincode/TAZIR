@@ -32,31 +32,22 @@
                                    <div class="form-group col-md-12">
                                         <label for="santri">Santri</label>
                                         <select class="form-control select2" id="santri" name="santri">
-                                             <option value="" selected>-- Pilih Santri --</option>
-                                             @foreach ($dataSantri as $santri)
-                                             <option value="{{ $santri->id }}">{{ $santri->nis }} | {{ $santri->nama_santri }} | {{ $santri->kelas->nama_kelas }}</option>
-                                             @endforeach
+
                                         </select>
                                         <div class="invalid-feedback msg-santri"></div>
                                    </div>
                                    <div class="form-group col-md-12">
                                         <label for="larangan">Larangan</label>
                                         <select class="form-control select2" id="larangan" name="larangan">
-                                             <option value="" selected>-- Pilih Larangan --</option>
-                                             @foreach ($dataLarangan as $larangan)
-                                             <option value="{{ $larangan }}">{{ $larangan }}</option>
-                                             @endforeach
+
                                         </select>
                                         <div class="invalid-feedback msg-larangan"></div>
                                    </div>
+
                                    <div class="form-group col-md-12">
                                         <label for="pelanggaran">Pelanggaran</label>
-                                        <select class="form-control select2 disabled" id="pelanggaran" name="pelanggaran" disabled>
-                                             <option value="" selected>-- Pilih Pelanggaran --</option>
-                                             @foreach ($dataPelanggaran as $pelanggaran)
-                                             <option value="{{ $pelanggaran->id }}" data-larangan="{{ $pelanggaran->larangan }}">{{ $pelanggaran->nama_violasi }}
-                                             </option>
-                                             @endforeach
+                                        <select class="form-control select2" id="pelanggaran" name="pelanggaran" disabled>
+
                                         </select>
                                         <div class="invalid-feedback msg-pelanggaran"></div>
                                    </div>
@@ -87,34 +78,6 @@
 @endpush
 
 @push('js')
-<script>
-     $(document).ready(function() {
-          $('#larangan').on('change', function() {
-               var selectedLarangan = $(this).val();
-               var hasMatchingData = false; // Penanda jika ada data yang sesuai
-
-               $('#pelanggaran option').each(function() {
-                    var pelanggaranLarangan = $(this).data('larangan');
-
-                    // Cek apakah pelanggaran sesuai dengan larangan yang dipilih
-                    if (pelanggaranLarangan == selectedLarangan) {
-                         $(this).show();
-                         hasMatchingData = true; // Tandai bahwa ada data yang sesuai
-                    } else {
-                         $(this).hide();
-                    }
-               });
-
-               // Jika ada data yang sesuai, aktifkan select pelanggaran
-               if (hasMatchingData) {
-                    $('#pelanggaran').removeAttr('disabled');
-               } else {
-                    // Jika tidak ada data yang sesuai, disable dan kosongkan select pelanggaran
-                    $('#pelanggaran').attr('disabled', 'disabled').val(null).trigger('change');
-               }
-          });
-
-     });
-
-</script>
+@include('admin-panel.layouts.vendor.jsCustom')
+<script src="{{ asset('javascript/page/pelanggaran/create.js') }}"></script>
 @endpush

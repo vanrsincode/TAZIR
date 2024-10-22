@@ -27,6 +27,9 @@ use Illuminate\Support\Facades\Route;
 Route::controller(Select2Controller::class)->group(function () {
     Route::get('selectLevel', 'getSelectLevel');
     Route::get('selectKelas', 'getSelectKelas');
+    Route::get('selectLarangan', 'getSelectLarangan');
+    Route::get('selectPelanggaran/{id}', 'getSelectPelanggaran');
+    Route::get('selectSantri', 'getSelectSantri');
 });
 Route::controller(DataTableController::class)->group(function() {
     Route::get('dataLevel', 'dataTableLevel');

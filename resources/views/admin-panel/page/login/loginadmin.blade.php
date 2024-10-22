@@ -25,21 +25,21 @@
   <div class="modal">
     <div class="modal-container">
       <div class="modal-left">
-        <h1 class="modal-title">Welcome!</h1>
-        <p class="modal-desc">Fanny pack hexagon food truck, street art waistcoat kitsch.</p>
+        <h1 class="modal-title">Selamat Datang!</h1>
+        <p class="modal-desc">Sistem Keamanan PP Salafiyah Sholawat</p>
         <div class="input-block">
-          <label for="email" class="input-label">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email">
+          <label for="no_tlp" class="input-label">No. Telpon</label>
+          <input type="no_tlp" name="no_tlp" id="no_tlp" placeholder="No .Telpon">
         </div>
         <div class="input-block">
-          <label for="password" class="input-label">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
+          <label for="password" class="input-label">Kata Sandi</label>
+          <input type="password" name="password" id="password" placeholder="Kata Sandi">
         </div>
         <div class="modal-buttons">
-          <a href="" class="">Forgot your password?</a>
+          <a href="" class="">Lupa Sandi?</a>
           <button class="input-button">Login</button>
         </div>
-        <p class="sign-up">Don't have an account? <a href="#">Sign up now</a></p>
+        <p class="sign-up">Tidak Punya Akun? <a href="#">Daftar Sekarang</a></p>
       </div>
       <div class="modal-right">
         <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="">
@@ -50,7 +50,7 @@
   </svg>
         </button>
     </div>
-    <button class="modal-button">Click here to login</button>
+    <button class="modal-button">Klik Untuk Login</button>
   </div>
   <!-- partial -->
     <script  src="{{ asset('login/script.js') }}"></script>

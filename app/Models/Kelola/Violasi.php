@@ -2,6 +2,7 @@
 
 namespace App\Models\Kelola;
 
+use App\Models\Pelanggaran;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,5 +29,10 @@ class Violasi extends Model
     public function level()
     {
         return $this->belongsTo(Level::class, 'level_id');
+    }
+
+    public function pelanggaran()
+    {
+        return $this->hasMany(Pelanggaran::class);
     }
 }

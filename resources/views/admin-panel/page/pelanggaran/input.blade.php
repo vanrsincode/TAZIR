@@ -7,6 +7,7 @@
 @endpush
 
 @push('css_vendor')
+<link rel="stylesheet" href="{{ asset('adm-panel/vendor') }}/izitoast/dist/css/iziToast.min.css">
 <link rel="stylesheet" href="{{ asset('adm-panel/vendor') }}/select2/dist/css/select2.min.css">
 @endpush
 
@@ -26,7 +27,7 @@
                     <div class="card-header">
                          <h4 class="text-dark">Input Pelanggaran</h4>
                     </div>
-                    <form id="FSPelanggaran" method="POST" enctype="multipart/form-data">
+                    <form id="FPelanggaran" method="POST" enctype="multipart/form-data">
                          <div class="card-body">
                               <div class="row">
                                    <div class="form-group col-md-12">
@@ -64,7 +65,7 @@
                               </div>
                          </div>
                          <div class="card-footer text-right">
-                              <button class="btn btn-primary">Submit</button>
+                              <button type="submit" class="btn btn-primary btn-form">Submit</button>
                          </div>
                     </form>
                </div>
@@ -74,6 +75,7 @@
 @endsection
 
 @push('js_vendor')
+<script src="{{ asset('adm-panel/vendor') }}/izitoast/dist/js/iziToast.min.js"></script>
 <script src="{{ asset('adm-panel/vendor') }}/select2/dist/js/select2.full.min.js"></script>
 @endpush
 

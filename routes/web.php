@@ -101,6 +101,7 @@ Route::get('detail-santri', function () {
 
 Route::controller(PelanggaranController::class)->group(function() {
     Route::get('input-pelanggaran', 'create')->name('pelanggaran.create');
+    Route::post('input-pelanggaran', 'store')->name('pelanggaran.store');
 });
 
 Route::get('log-aktivitas.index', function () {

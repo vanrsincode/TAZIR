@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tb_pelanggaran', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal');
+            $table->text('foto_pelanggaran')->nullable();
 
             $table->unsignedBigInteger('santri_id');
             $table->unsignedBigInteger('violasi_id');

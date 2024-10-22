@@ -41,11 +41,7 @@ Route::get('/', function () {
 })->name('dashboard');
 
 Route::controller(LoginController::class)->group(function() {
-    Route::get('login', 'index')->name('login.loginadmin');
-    Route::get('data-santri/{id}', 'show')->name('data-santri.show');
-    Route::post('data-santri', 'store')->name('data-santri.store');
-    Route::post('data-santri/{id}', 'update')->name('data-santri.update');
-    Route::post('data-santri/del/{id}', 'destroy')->name('data-santri.destroy');
+    Route::get('login', 'index')->name('login.index');
 });
 
 Route::controller(SantriController::class)->group(function() {

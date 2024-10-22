@@ -10,5 +10,4 @@ class LoginController extends Controller
     {
         return view('admin-panel.page.login.loginadmin');
     }
-    //
 }

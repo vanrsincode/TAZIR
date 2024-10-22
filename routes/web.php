@@ -5,8 +5,10 @@ use App\Http\Controllers\Component\Select2Controller;
 use App\Http\Controllers\IzinController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ViolasiController;
+use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -82,16 +84,8 @@ Route::get('detail-santri', function () {
     return view('admin-panel.page.data-santri.detail.index');
 })->name('data-santri.detail.index');
 
-Route::get('/file/{folder}/{filename}', function ($folder, $filename) {
-    $path = storage_path('app/public/' . $folder . '/' . $filename);
-    if (!File::exists($path)) {
-        abort(404);
-    }
-    $file = File::get($path);
-    $type = File::mimeType($path);
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-    return $response;
+Route::controller(PelanggaranController::class)->group(function() {
+    Route::get('input-pelanggaran', 'create')->name('pelanggaran.create');
 });
 
 Route::get('log-aktivitas.index', function () {
@@ -106,11 +100,6 @@ Route::get('input-izin', function () {
     return view('admin-panel.page.perizinan.input');
 })->name('perizinan.create');
 
-
-Route::get('input-pelanggaran', function () {
-    return view('admin-panel.page.pelanggaran.input');
-})->name('pelanggaran.create');
-
 Route::get('harian.index', function () {
     return view('admin-panel.page.pelanggaran.harian.index');
 })->name('harian.index');
@@ -121,3 +110,16 @@ Route::get('bulanan.index', function () {
 Route::get('data-pengguna', function () {
     return view('admin-panel.page.data-pengguna.index');
 })->name('data-pengguna.index');
+
+
+Route::get('/file/{folder}/{filename}', function ($folder, $filename) {
+    $path = storage_path('app/public/' . $folder . '/' . $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+});

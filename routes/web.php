@@ -7,6 +7,7 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\ViolasiController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,22 @@ Route::controller(DataTableController::class)->group(function() {
 Route::get('/', function () {
     return view('admin-panel.page.dashboard.index');
 })->name('dashboard');
+
+Route::controller(LoginController::class)->group(function() {
+    Route::get('login', 'index')->name('login.loginadmin');
+    Route::get('data-santri/{id}', 'show')->name('data-santri.show');
+    Route::post('data-santri', 'store')->name('data-santri.store');
+    Route::post('data-santri/{id}', 'update')->name('data-santri.update');
+    Route::post('data-santri/del/{id}', 'destroy')->name('data-santri.destroy');
+});
+
+Route::controller(SantriController::class)->group(function() {
+    Route::get('data-santri', 'index')->name('data-santri.index');
+    Route::get('data-santri/{id}', 'show')->name('data-santri.show');
+    Route::post('data-santri', 'store')->name('data-santri.store');
+    Route::post('data-santri/{id}', 'update')->name('data-santri.update');
+    Route::post('data-santri/del/{id}', 'destroy')->name('data-santri.destroy');
+});
 
 Route::controller(IzinController::class)->group(function() {
     Route::get('izin', 'index')->name('izin.index');
